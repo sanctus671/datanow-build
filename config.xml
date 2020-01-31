@@ -1,17 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.giftonix.app" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity[@android:label='@string/activity_name']">
-        <activity android:theme="@style/giftonixTheme" />
-    </edit-config>
+<widget id="nz.co.datanow.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application android:icon="@mipmap/launcher" android:roundIcon="@mipmap/launcher_round" />
     </edit-config>
-    <name>Giftonix</name>
-    <description>Gifting app for Australia and New Zealand.</description>
-    <author email="taylor@taylorhamling.com" href="https://www.taylorhamling.com/">Taylor Hamling</author>
+    <name>DataNow</name>
+    <description>DataNow app.</description>
+    <author email="hello@datanow.co.nz" href="https://www.datanow.co.nz/">DataNow</author>
     <content src="index.html" />
     <access origin="*" />
-    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -33,12 +29,12 @@
     <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
     <preference name="AndroidLaunchMode" value="singleTask" />
     <platform name="android">
-        <allow-intent href="market:*" />
         <preference name="loadUrlTimeoutValue" value="700000" />
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
             <application android:networkSecurityConfig="@xml/network_security_config" />
         </edit-config>
         <resource-file src="resources/android/xml/network_security_config.xml" target="res/xml/network_security_config.xml" />
+        <allow-intent href="market:*" />
         <resource-file src="resources/android/icon/values/launcher_background.xml" target="res/values/launcher_background.xml" />
         <resource-file src="resources/android/icon/mipmap-anydpi-v26/launcher.xml" target="res/mipmap-anydpi-v26/launcher.xml" />
         <resource-file src="resources/android/icon/mipmap-anydpi-v26/launcher_round.xml" target="res/mipmap-anydpi-v26/launcher_round.xml" />
@@ -59,58 +55,41 @@
         <resource-file src="resources/android/icon/mipmap-xxxhdpi/launcher_round.png" target="res/mipmap-xxxhdpi-v4/launcher_round.png" />
         <resource-file src="resources/android/icon/mipmap-xxxhdpi/launcher_foreground.png" target="res/mipmap-xxxhdpi-v4/launcher_foreground.png" />
         <resource-file src="resources/android/styles.xml" target="res/values/styles.xml" />
+        <splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.png" />
+        <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.png" />
+        <splash density="land-hdpi" src="resources/android/splash/drawable-land-hdpi-screen.png" />
+        <splash density="land-xhdpi" src="resources/android/splash/drawable-land-xhdpi-screen.png" />
+        <splash density="land-xxhdpi" src="resources/android/splash/drawable-land-xxhdpi-screen.png" />
+        <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.png" />
+        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
+        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
+        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-    <splash density="port-ldpi" platform="android" src="resources/android/splash/splash-port-ldpi.png" />
-    <splash density="port-mdpi" platform="android" src="resources/android/splash/splash-port-mdpi.png" />
-    <splash density="port-hdpi" platform="android" src="resources/android/splash/splash-port-hdpi.png" />
-    <splash density="port-xhdpi" platform="android" src="resources/android/splash/splash-port-xhdpi.png" />
-    <splash density="port-xxhdpi" platform="android" src="resources/android/splash/splash-port-xxhdpi.png" />
-    <splash density="port-xxxhdpi" platform="android" src="resources/android/splash/splash-port-xxxhdpi.png" />
-    <splash density="land-ldpi" platform="android" src="resources/android/splash/splash-land-ldpi.png" />
-    <splash density="land-mdpi" platform="android" src="resources/android/splash/splash-land-mdpi.png" />
-    <splash density="land-hdpi" platform="android" src="resources/android/splash/splash-land-hdpi.png" />
-    <splash density="land-xhdpi" platform="android" src="resources/android/splash/splash-land-xhdpi.png" />
-    <splash density="land-xxhdpi" platform="android" src="resources/android/splash/splash-land-xxhdpi.png" />
-    <splash density="land-xxxhdpi" platform="android" src="resources/android/splash/splash-land-xxxhdpi.png" />
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <preference name="ios-statusbarstyle" value="black-opaque" />
-        <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-            <string>Send Geolocated notifications</string>
-        </edit-config>
-        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-            <string>Send Geolocated notifications</string>
-        </edit-config>
-        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
-            <string>Select images for your profile</string>
-        </edit-config>
-        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-            <string>Take pictures for your profile</string>
-        </edit-config>        
-        <config-file parent="com.apple.developer.associated-domains" target="*-Info.plist">
-            <array>
-                <string>applinks:share.giftonix.com</string>
-            </array>
-        </config-file>
-		
-        <config-file target="*-Info.plist" parent="com.apple.developer.in-app-payments">
-          <array>
-            <string>merchant.giftonix.app</string>
-          </array>
-        </config-file>       
-        
-        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
+        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
+        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
         <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
         <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
-        <icon height="40" src="resources/ios/icon/icon-small-40.png" width="40" />
-        <icon height="80" src="resources/ios/icon/icon-small-40@2x.png" width="80" />
-        <icon height="120" src="resources/ios/icon/icon-small-40@3x.png" width="120" />
-        <icon height="50" src="resources/ios/icon/icon-small-50.png" width="50" />
-        <icon height="100" src="resources/ios/icon/icon-small-50@2x.png" width="100" />
-        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
-        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
+        <icon height="20" src="resources/ios/icon/icon-20.png" width="20" />
+        <icon height="40" src="resources/ios/icon/icon-20@2x.png" width="40" />
+        <icon height="60" src="resources/ios/icon/icon-20@3x.png" width="60" />
+        <icon height="48" src="resources/ios/icon/icon-24@2x.png" width="48" />
+        <icon height="55" src="resources/ios/icon/icon-27.5@2x.png" width="55" />
+        <icon height="29" src="resources/ios/icon/icon-29.png" width="29" />
+        <icon height="58" src="resources/ios/icon/icon-29@2x.png" width="58" />
+        <icon height="87" src="resources/ios/icon/icon-29@3x.png" width="87" />
+        <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
+        <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
+        <icon height="120" src="resources/ios/icon/icon-40@3x.png" width="120" />
+        <icon height="88" src="resources/ios/icon/icon-44@2x.png" width="88" />
+        <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
+        <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
         <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
         <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
         <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
@@ -118,51 +97,31 @@
         <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144" />
         <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
         <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
-        <icon height="167" src="resources/ios/icon/icon-167.png" width="167" />
         <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167" />
-		
-		<plugin name="onesignal-cordova-plugin" spec="2.7.0" />
-		
+        <icon height="172" src="resources/ios/icon/icon-86@2x.png" width="172" />
+        <icon height="196" src="resources/ios/icon/icon-98@2x.png" width="196" />
+        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
+        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+        <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
+        <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
+        <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+        <splash height="1125" src="resources/ios/splash/Default-Landscape-2436h.png" width="2436" />
+        <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+        <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+        <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+        <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
+        <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
+        <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
+        <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
+        <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
+        <splash height="2436" src="resources/ios/splash/Default-2436h.png" width="1125" />
+        <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
-    <splash height="480" platform="ios" src="resources/ios/splash/Default~iphone.png" width="320" />
-    <splash height="960" platform="ios" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
-    <splash height="1024" platform="ios" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
-    <splash height="2048" platform="ios" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
-    <splash height="1136" platform="ios" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
-    <splash height="1334" platform="ios" src="resources/ios/splash/Default-667h.png" width="750" />
-    <splash height="2208" platform="ios" src="resources/ios/splash/Default-736h.png" width="1242" />
-    <splash height="768" platform="ios" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
-    <splash height="1536" platform="ios" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
-    <splash platform="ios" src="resources/ios/splash/Default@2x~iphone~anyany.png" />
-    <splash platform="ios" src="resources/ios/splash/Default@2x~iphone~comany.png" />
-    <splash platform="ios" src="resources/ios/splash/Default@3x~iphone~anyany.png" />
-    <splash platform="ios" src="resources/ios/splash/Default@3x~iphone~comany.png" />
-    <splash platform="ios" src="resources/ios/splash/Default@2x~ipad~anyany.png" />
-    <splash platform="ios" src="resources/ios/splash/Default@2x~ipad~comany.png" />
-    <icon src="resources/icon.png" />
-    <splash src="resources/splash.png" />
-    <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <gap:plugin spec="https://github.com/pdyraga/cordova-plugin-splashscreen" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^2.4.1" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <gap:plugin name="cordova-plugin-camera" source="npm" version="^4.1.0">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="We are using the Camera to take pictures for an avatar" />
-        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We are using the Photo Library to get pictures for an avatar" />
-    </gap:plugin>
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <plugin name="cordova-plugin-file" spec="^6.0.2" />
-    <gap:plugin spec="https://github.com/hypery2k/cordova-email-plugin#master" />
-    <plugin name="cordova-plugin-inappbrowser" spec="^3.1.0" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="^5.6.2" />
-		
-    <gap:plugin name="ionic-plugin-deeplinks" source="npm" version="^1.0.20">
-        <param name="URL_SCHEME" value="giftonix" />
-        <param name="DEEPLINK_SCHEME" value="https" />
-        <param name="DEEPLINK_HOST" value="share.giftonix.com" />
-        <param name="ANDROID_PATH_PREFIX" value="/" />
-    </gap:plugin>
-    <gap:plugin spec="https://github.com/sanctus671/cordova-plugin-stripe.git#v2" />  
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.2.0" />
 </widget>
