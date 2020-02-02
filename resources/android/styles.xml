@@ -3,7 +3,8 @@
     <color name="primaryColorDark">#33395D</color>
     <color name="whiteColor">#FFFFFF</color>
     <color name="grayColor">#DDDDDD</color>
-    <color name="transaprentColor">#00000000</color>
+    <color name="transaprentColor">#00000000</color>  
+    <color name="backgroundColor">#051c3f</color>
     <style name="dnTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
         <!-- on startup the background and app-name is shown, we use the same color to see just background.. -->
         <item name="android:textColorPrimary">@color/primaryColorDark</item>
@@ -12,11 +13,11 @@
         <item name="android:colorAccent">@color/primaryColor</item>
         
         
-        <item name="android:statusBarColor">@color/grayColor</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/primaryColor</item>
+        <item name="android:windowLightStatusBar">false</item>
         
         
-        <item name="android:background">@color/primaryColorDark</item>
+        <item name="android:background">@color/backgroundColor</item>
 
         <!-- date- and timepickers need their own themes -->
         <item name="android:datePickerDialogTheme">@style/MyPickerDialogTheme</item>
