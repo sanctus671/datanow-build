@@ -14,6 +14,9 @@
         
         <item name="android:statusBarColor">@color/grayColor</item>
         <item name="android:windowLightStatusBar">true</item>
+        
+        
+        <item name="android:background">@color/primaryColorDark</item>
 
         <!-- date- and timepickers need their own themes -->
         <item name="android:datePickerDialogTheme">@style/MyPickerDialogTheme</item>
@@ -27,8 +30,9 @@
     
     <style name="SplashScreenStyle">
         <item name="android:windowBackground">@color/transaprentColor</item>
-        <item name="android:colorBackground">@color/transaprentColor</item>   
-        <item name="android:statusBarColor">@color/grayColor</item>    
+        <item name="android:colorBackground">@color/transaprentColor</item>  
+        <item name="android:windowLightStatusBar">false</item> 
+        <item name="android:statusBarColor">@color/primaryColor</item>    
     </style>
     
 
