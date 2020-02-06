@@ -16,7 +16,7 @@
         <item name="android:statusBarColor">@color/primaryColor</item>
         <item name="android:windowLightStatusBar">false</item>
         
-        
+        <item name="android:windowBackground">@color/backgroundColor</item>
         
 
         <!-- date- and timepickers need their own themes -->
@@ -30,7 +30,7 @@
     
     
     <style name="SplashScreenStyle">
-        <item name="android:background">@color/backgroundColor</item>
+        
         <item name="android:windowBackground">@color/transaprentColor</item>
         <item name="android:colorBackground">@color/transaprentColor</item>  
         <item name="android:windowLightStatusBar">false</item> 
